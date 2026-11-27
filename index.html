@@ -46,6 +46,16 @@ main{flex:1;min-width:0;padding:28px 34px 40px;max-width:1600px;margin:auto;widt
     <div class="sub" style="margin-top:9px">Required columns: movement_type, quantity, item_code, item_description, receipt_no, received_date, bin_location, putaway_status. Use Stock-in / Stock-out for movements and Pending Putaway for items awaiting a bin.</div>
     <div id="uploadMessage" class="sub" role="status" style="margin-top:8px">No file uploaded yet. Dashboard currently shows sample figures.</div>
   </section>
+
+  <section class="panel" id="item-lookup" style="margin-bottom:18px">
+    <div class="panel-head" style="margin-bottom:10px"><div><h3>Item code search – all details</h3><div class="sub">Search an item code to view stock, bin/location, reorder level, status and uploaded movement / putaway details.</div></div><span class="status good">Item lookup</span></div>
+    <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap">
+      <input class="search" id="itemCodeSearch" placeholder="Enter item code (e.g. 9103021)" aria-label="Search item code" style="width:min(360px,100%)">
+      <button class="btn primary" id="itemCodeSearchBtn" type="button">Search item</button>
+      <button class="btn" id="clearItemSearchBtn" type="button">Clear</button>
+    </div>
+    <div id="itemSearchResults" aria-live="polite" style="margin-top:12px"><div class="sub">Enter an item code to see all matching details.</div></div>
+  </section>
   <section class="cards">
     <div class="card metric"><div class="metric-top">Total SKUs <span class="metric-icon">▤</span></div><div class="metric-value">2,486</div><div class="metric-foot"><span class="positive">↑ 4.8%</span> vs. last month</div></div>
     <div class="card metric"><div class="metric-top">Total Stock Units <span class="metric-icon">▦</span></div><div class="metric-value">48,920</div><div class="metric-foot">Across all warehouse bins</div></div>
@@ -73,15 +83,7 @@ main{flex:1;min-width:0;padding:28px 34px 40px;max-width:1600px;margin:auto;widt
     </div>
   </section>
 
-  <section class="panel" id="item-lookup" style="margin-bottom:18px">
-    <div class="panel-head" style="margin-bottom:10px"><div><h3>Item code search – all details</h3><div class="sub">Search an item code to view stock, bin/location, reorder level, status and uploaded movement / putaway details.</div></div><span class="status good">Item lookup</span></div>
-    <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap">
-      <input class="search" id="itemCodeSearch" placeholder="Enter item code (e.g. 9103021)" aria-label="Search item code" style="width:min(360px,100%)">
-      <button class="btn primary" id="itemCodeSearchBtn" type="button">Search item</button>
-      <button class="btn" id="clearItemSearchBtn" type="button">Clear</button>
-    </div>
-    <div id="itemSearchResults" aria-live="polite" style="margin-top:12px"><div class="sub">Enter an item code to see all matching details.</div></div>
-  </section>
+
   <section class="panel table-panel" id="inventory">
     <div class="table-head"><div><h3>Recent inventory</h3><div class="sub">Sample item and bin-wise stock records</div></div><div class="tools"><input class="search" id="search" placeholder="Search item, code or bin…" aria-label="Search inventory"><select id="statusFilter" aria-label="Filter by stock status"><option value="all">All statuses</option><option value="Available">Available</option><option value="Low Stock">Low Stock</option><option value="Critical">Critical</option></select><button class="btn" onclick="downloadCSV()">Export CSV ↓</button></div></div>
     <div class="table-scroll"><table><thead><tr><th>Item code</th><th>Item description</th><th>Bin location</th><th>Stock qty</th><th>Reorder level</th><th>Status</th></tr></thead><tbody id="inventoryRows">
