@@ -9,8 +9,8 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
 .app{display:flex;min-height:100vh}.sidebar{width:238px;background:#fff;border-right:1px solid var(--line);padding:25px 16px;flex-shrink:0}.brand{display:flex;gap:11px;align-items:center;padding:0 10px 30px;font-weight:750;font-size:17px}.logo{width:34px;height:34px;border-radius:10px;background:var(--blue);color:white;display:grid;place-items:center;font-weight:800}.nav-label{font-size:10px;letter-spacing:1.2px;color:#9aa5b5;font-weight:700;padding:12px 12px 8px}.nav a{display:flex;align-items:center;gap:12px;padding:11px 12px;margin:3px 0;border-radius:9px;text-decoration:none;color:#68758a;font-weight:550}.nav a.active{background:var(--blue2);color:var(--blue)}.nav a span{width:18px;text-align:center;font-size:16px}.side-note{margin:38px 8px 0;padding:14px;background:#f7f9fd;border:1px solid var(--line);border-radius:12px;color:var(--muted);font-size:12px}.side-note strong{display:block;color:var(--ink);margin-bottom:5px}
 main{flex:1;min-width:0;padding:28px 34px 40px;max-width:1600px;margin:auto;width:100%}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.eyebrow{color:var(--muted);font-size:12px}.topbar h1{font-size:24px;margin:3px 0 0;letter-spacing:-.5px}.user{display:flex;align-items:center;gap:10px;color:#526075}.avatar{width:36px;height:36px;border-radius:50%;background:#e8efff;color:var(--blue);display:grid;place-items:center;font-weight:700}.welcome{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.welcome h2{font-size:17px;margin:0 0 3px}.welcome p{margin:0;color:var(--muted);font-size:12px}.date{border:1px solid var(--line);background:white;padding:9px 12px;border-radius:8px;color:#58657a;font-size:12px}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:18px}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}.metric{padding:18px}.metric-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}.metric-icon{width:32px;height:32px;border-radius:9px;background:#f0f4ff;display:grid;place-items:center;color:var(--blue);font-size:16px}.metric-value{font-size:25px;font-weight:750;letter-spacing:-.7px;margin:12px 0 3px}.metric-foot{font-size:11px;color:var(--muted)}.positive{color:var(--green);font-weight:650}.middle{display:grid;grid-template-columns:1.55fr 1fr;gap:16px;margin-bottom:18px}.panel{padding:19px}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.panel-head h3{font-size:14px;margin:0}.sub{font-size:11px;color:var(--muted)}.legend{display:flex;gap:14px;color:var(--muted);font-size:11px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}.chart{height:178px;display:flex;align-items:end;gap:14px;padding:10px 8px 0;border-bottom:1px solid var(--line);background:repeating-linear-gradient(to bottom,transparent 0,transparent 43px,#f0f3f8 44px)}.bar-group{flex:1;height:100%;display:flex;align-items:end;justify-content:center;gap:4px;position:relative}.bar{width:13px;border-radius:4px 4px 0 0;background:#9bb7fb}.bar.alt{background:var(--blue)}.month-labels{display:flex;justify-content:space-around;color:var(--muted);font-size:10px;padding-top:8px}.stock-list{display:grid;gap:16px}.stock-row{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center}.stock-name{font-size:12px;font-weight:600}.stock-count{font-size:11px;color:var(--muted)}.track{height:6px;border-radius:10px;background:#eef1f6;grid-column:1/-1;overflow:hidden}.fill{height:100%;border-radius:10px;background:var(--blue)}.fill.warn{background:#e7a33b}.fill.danger{background:#dc6670}.table-panel{padding:0;overflow:hidden}.table-head{padding:18px 19px;display:flex;justify-content:space-between;align-items:center;gap:12px}.table-head h3{font-size:14px;margin:0}.tools{display:flex;gap:8px}.search{border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:190px;font:inherit;font-size:12px;outline:none}.search:focus{border-color:var(--blue)}select,.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 10px;color:#56647a;font:inherit;font-size:12px}.btn{cursor:pointer}.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap}th{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:#98a2b1;background:#fafbfd;padding:11px 19px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}td{padding:13px 19px;border-bottom:1px solid #f0f2f6;font-size:12px}tbody tr:last-child td{border-bottom:0}.item{font-weight:650}.muted{color:var(--muted)}.status{display:inline-block;padding:4px 8px;border-radius:20px;font-size:10px;font-weight:650}.good{background:#e8f7f0;color:#16845f}.low{background:#fff4df;color:#a86a0d}.critical{background:#ffebed;color:#c13e49}.bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.activity{display:grid;gap:13px}.activity-row{display:flex;gap:11px;align-items:flex-start}.activity-icon{width:29px;height:29px;border-radius:8px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;flex-shrink:0}.activity-text{font-size:12px}.activity-text small{display:block;color:var(--muted);margin-top:2px}.alert{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f2f6;font-size:12px}.alert:last-child{border:0}.alert strong{display:block}.footer{padding:22px 0 0;text-align:center;color:#a0a9b7;font-size:10px}
-@media(max-width:1050px){.cards{grid-template-columns:repeat(2,1fr)}.middle{grid-template-columns:1fr}.sidebar{width:205px}main{padding:24px}}
+.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-bottom:18px}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}.metric{padding:18px}.metric-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}.metric-icon{width:32px;height:32px;border-radius:9px;background:#f0f4ff;display:grid;place-items:center;color:var(--blue);font-size:16px}.metric-value{font-size:25px;font-weight:750;letter-spacing:-.7px;margin:12px 0 3px}.metric-foot{font-size:11px;color:var(--muted)}.positive{color:var(--green);font-weight:650}.middle{display:grid;grid-template-columns:1.55fr 1fr;gap:16px;margin-bottom:18px}.panel{padding:19px}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.panel-head h3{font-size:14px;margin:0}.sub{font-size:11px;color:var(--muted)}.legend{display:flex;gap:14px;color:var(--muted);font-size:11px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}.chart{height:178px;display:flex;align-items:end;gap:14px;padding:10px 8px 0;border-bottom:1px solid var(--line);background:repeating-linear-gradient(to bottom,transparent 0,transparent 43px,#f0f3f8 44px)}.bar-group{flex:1;height:100%;display:flex;align-items:end;justify-content:center;gap:4px;position:relative}.bar{width:13px;border-radius:4px 4px 0 0;background:#9bb7fb}.bar.alt{background:var(--blue)}.month-labels{display:flex;justify-content:space-around;color:var(--muted);font-size:10px;padding-top:8px}.stock-list{display:grid;gap:16px}.stock-row{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center}.stock-name{font-size:12px;font-weight:600}.stock-count{font-size:11px;color:var(--muted)}.track{height:6px;border-radius:10px;background:#eef1f6;grid-column:1/-1;overflow:hidden}.fill{height:100%;border-radius:10px;background:var(--blue)}.fill.warn{background:#e7a33b}.fill.danger{background:#dc6670}.table-panel{padding:0;overflow:hidden}.table-head{padding:18px 19px;display:flex;justify-content:space-between;align-items:center;gap:12px}.table-head h3{font-size:14px;margin:0}.tools{display:flex;gap:8px}.search{border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:190px;font:inherit;font-size:12px;outline:none}.search:focus{border-color:var(--blue)}select,.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 10px;color:#56647a;font:inherit;font-size:12px}.btn{cursor:pointer}.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap}th{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:#98a2b1;background:#fafbfd;padding:11px 19px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}td{padding:13px 19px;border-bottom:1px solid #f0f2f6;font-size:12px}tbody tr:last-child td{border-bottom:0}.item{font-weight:650}.muted{color:var(--muted)}.status{display:inline-block;padding:4px 8px;border-radius:20px;font-size:10px;font-weight:650}.good{background:#e8f7f0;color:#16845f}.low{background:#fff4df;color:#a86a0d}.critical{background:#ffebed;color:#c13e49}.bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.activity{display:grid;gap:13px}.activity-row{display:flex;gap:11px;align-items:flex-start}.activity-icon{width:29px;height:29px;border-radius:8px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;flex-shrink:0}.activity-text{font-size:12px}.activity-text small{display:block;color:var(--muted);margin-top:2px}.alert{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f2f6;font-size:12px}.alert:last-child{border:0}.alert strong{display:block}.footer{padding:22px 0 0;text-align:center;color:#a0a9b7;font-size:10px}
+@media(max-width:1200px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}\n@media(max-width:1050px){.cards{grid-template-columns:repeat(2,1fr)}.middle{grid-template-columns:1fr}.sidebar{width:205px}main{padding:24px}}
 @media(max-width:700px){.sidebar{width:62px;padding:18px 8px}.brand{padding:0 5px 25px}.brand-name,.nav-label,.nav a .nav-text,.side-note{display:none}.nav a{justify-content:center;padding:12px 5px}.nav a span{font-size:18px}.topbar{align-items:flex-start}.user .user-name{display:none}main{padding:20px 14px}.topbar h1{font-size:21px}.cards{gap:10px}.metric{padding:13px}.metric-value{font-size:21px}.welcome{align-items:flex-start;gap:10px}.date{font-size:10px}.table-head{align-items:flex-start;flex-direction:column}.tools{width:100%;flex-wrap:wrap}.search{flex:1;min-width:120px}table{min-width:700px}.table-scroll{overflow-x:auto}.bottom{grid-template-columns:1fr}}
 </style>
 </head>
@@ -30,19 +30,30 @@ main{flex:1;min-width:0;padding:28px 34px 40px;max-width:1600px;margin:auto;widt
     <a href="#reports"><span>▥</span><span class="nav-text">Reports</span></a>
     <a href="#settings"><span>⚙</span><span class="nav-text">Settings</span></a>
   </nav>
-  <div class="side-note"><strong>Warehouse overview</strong>Sample dashboard data is shown. Connect your inventory source to display live figures.</div>
+  <div class="side-note"><strong>Warehouse overview</strong>Sample dashboard data is shown. Pending putaway means received stock not yet assigned to a bin/location.</div>
 </aside>
 <main id="dashboard">
   <header class="topbar"><div><div class="eyebrow">WAREHOUSE MANAGEMENT</div><h1>Dashboard</h1></div><div class="user"><div class="avatar">WH</div><span class="user-name">Warehouse Team</span></div></header>
   <section class="welcome"><div><h2>Good morning 👋</h2><p>Here’s what’s happening in your warehouse today.</p></div><div class="date" id="today">Today</div></section>
+
+  <section class="panel" id="data-upload" style="margin-bottom:18px">
+    <div class="panel-head" style="margin-bottom:10px"><div><h3>Upload warehouse movement data</h3><div class="sub">Import Excel or CSV to refresh only stock-in, stock-out and pending putaway figures. Other dashboard sections stay unchanged.</div></div><span class="status good">Excel + CSV</span></div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <input id="inventoryFile" type="file" accept=".xlsx,.xls,.csv,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" style="max-width:100%;font-size:12px">
+      <button class="btn primary" id="uploadBtn" type="button">Upload and update</button>
+      <button class="btn" type="button" onclick="downloadTemplate()">Download sample template</button>
+    </div>
+    <div class="sub" style="margin-top:9px">Required columns: movement_type, quantity, item_code, item_description, receipt_no, received_date, bin_location, putaway_status. Use Stock-in / Stock-out for movements and Pending Putaway for items awaiting a bin.</div>
+    <div id="uploadMessage" class="sub" role="status" style="margin-top:8px">No file uploaded yet. Dashboard currently shows sample figures.</div>
+  </section>
   <section class="cards">
     <div class="card metric"><div class="metric-top">Total SKUs <span class="metric-icon">▤</span></div><div class="metric-value">2,486</div><div class="metric-foot"><span class="positive">↑ 4.8%</span> vs. last month</div></div>
     <div class="card metric"><div class="metric-top">Total Stock Units <span class="metric-icon">▦</span></div><div class="metric-value">48,920</div><div class="metric-foot">Across all warehouse bins</div></div>
     <div class="card metric"><div class="metric-top">Low Stock Items <span class="metric-icon">⚑</span></div><div class="metric-value">18</div><div class="metric-foot"><span style="color:var(--amber);font-weight:650">Needs attention</span> below reorder level</div></div>
-    <div class="card metric"><div class="metric-top">Today’s Movements <span class="metric-icon">↔</span></div><div class="metric-value">126</div><div class="metric-foot"><span class="positive">↑ 12%</span> vs. yesterday</div></div>
+    <div class="card metric"><div class="metric-top">Today’s Movements <span class="metric-icon">↔</span></div><div class="metric-value">126</div><div class="metric-foot"><span class="positive">↑ 12%</span> vs. yesterday</div></div>\n    <div class="card metric"><div class="metric-top">Pending Putaway <span class="metric-icon">⌖</span></div><div class="metric-value" id="pendingCount">14</div><div class="metric-foot"><span style="color:var(--amber);font-weight:650">Awaiting bin location</span></div></div>
   </section>
   <section class="middle">
-    <div class="panel" id="reports"><div class="panel-head"><div><h3>Inventory movement</h3><div class="sub">Inbound and outbound · last 6 months</div></div><div class="legend"><span><i class="dot" style="background:#9bb7fb"></i>Inbound</span><span><i class="dot" style="background:#356ae6"></i>Outbound</span></div></div>
+    <div class="panel" id="reports"><div class="panel-head"><div><h3>Stock-in &amp; stock-out overview</h3><div class="sub">Monthly inbound and outbound movement · sample data</div></div><div class="legend"><span><i class="dot" style="background:#9bb7fb"></i>Stock-in</span><span><i class="dot" style="background:#356ae6"></i>Stock-out</span></div></div>\n      <div style="display:flex;gap:22px;margin:-5px 0 8px;font-size:12px"><span><strong id="stockInTotal" style="color:var(--green)">↑ 8,420</strong> <span class="muted">Units received</span></span><span><strong id="stockOutTotal" style="color:var(--blue)">↓ 6,870</strong> <span class="muted">Units dispatched</span></span></div>
       <div class="chart">
         <div class="bar-group"><div class="bar" style="height:55%"></div><div class="bar alt" style="height:40%"></div></div>
         <div class="bar-group"><div class="bar" style="height:72%"></div><div class="bar alt" style="height:58%"></div></div>
@@ -71,6 +82,15 @@ main{flex:1;min-width:0;padding:28px 34px 40px;max-width:1600px;margin:auto;widt
       <tr data-status="Available"><td class="item">9103055</td><td>Master Carton White for BTS 75</td><td>MMN-02-01</td><td>420</td><td>120</td><td><span class="status good">Available</span></td></tr>
     </tbody></table></div>
   </section>
+
+  <section class="panel table-panel" id="pending-putaway" style="margin-top:18px">
+    <div class="table-head"><div><h3>New stock awaiting putaway</h3><div class="sub">Received items not yet assigned to a storage bin or location</div></div><span class="status low" id="pendingBadge">14 pending · sample</span></div>
+    <div class="table-scroll"><table><thead><tr><th>Receipt / GRN No.</th><th>Item code</th><th>Item description</th><th>Received qty</th><th>Received date</th><th>Putaway status</th></tr></thead><tbody id="pendingRows">
+      <tr><td class="item">INW-1711261</td><td>9103021</td><td>Master Carton for TS 68</td><td>120</td><td>27 Nov 2026</td><td><span class="status low">Location pending</span></td></tr>
+      <tr><td class="item">INW-1711262</td><td>9103031</td><td>TS 71 Master Carton</td><td>80</td><td>27 Nov 2026</td><td><span class="status low">Bin not assigned</span></td></tr>
+      <tr><td class="item">INW-1711263</td><td>9103055</td><td>Master Carton White for BTS 75</td><td>60</td><td>26 Nov 2026</td><td><span class="status critical">Putaway overdue</span></td></tr>
+    </tbody></table></div>
+  </section>
   <section class="bottom">
     <div class="panel" id="activity"><div class="panel-head"><h3>Recent transactions</h3><span class="sub">Latest activity</span></div><div class="activity">
       <div class="activity-row"><div class="activity-icon">↓</div><div class="activity-text"><strong>Goods receipt completed</strong><small>GRN · INW-1711261 · 32 minutes ago</small></div></div>
@@ -83,13 +103,79 @@ main{flex:1;min-width:0;padding:28px 34px 40px;max-width:1600px;margin:auto;widt
       <div class="alert"><div><strong>Packaging supplies</strong><span class="muted">Reorder point approaching</span></div><span class="status low">Review</span></div>
     </div>
   </section>
-  <div class="footer" id="settings">Kosh Inventory Hub · Demo dashboard · Replace sample data with your live WMS data before operational use.</div>
+  <div class="footer" id="settings">Kosh Inventory Hub · Demo dashboard · Stock-in, stock-out and pending putaway figures are sample data; connect your WMS before operational use.</div>
 </main>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
 const now=new Date();document.getElementById('today').textContent=now.toLocaleDateString(undefined,{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
 function filterRows(){const q=document.getElementById('search').value.toLowerCase(),s=document.getElementById('statusFilter').value;document.querySelectorAll('#inventoryRows tr').forEach(r=>{r.style.display=(r.innerText.toLowerCase().includes(q)&&(s==='all'||r.dataset.status===s))?'':'none'})}
 document.getElementById('search').addEventListener('input',filterRows);document.getElementById('statusFilter').addEventListener('change',filterRows);
 function downloadCSV(){const rows=[...document.querySelectorAll('table tr')].filter(r=>r.style.display!=='none').map(r=>[...r.querySelectorAll('th,td')].map(c=>'"'+c.innerText.replaceAll('"','""')+'"').join(','));const blob=new Blob([rows.join('\n')],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kosh-inventory.csv';a.click();URL.revokeObjectURL(a.href)}
+
+const uploadInput=document.getElementById('inventoryFile');
+const uploadMessage=document.getElementById('uploadMessage');
+document.getElementById('uploadBtn').addEventListener('click',handleInventoryUpload);
+
+function normKey(v){return String(v??'').trim().toLowerCase().replace(/[\s\-\/]+/g,'_').replace(/[^a-z0-9_]/g,'').replace(/_+/g,'_').replace(/^_|_$/g,'')}
+function getField(row, aliases){for(const a of aliases){const k=normKey(a);if(row[k]!==undefined&&row[k]!==null&&String(row[k]).trim()!=='')return row[k]}return ''}
+function asNumber(v){if(typeof v==='number')return v;const n=Number(String(v??'').replace(/,/g,'').trim());return Number.isFinite(n)?n:0}
+function escapeHTML(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderPending(items){
+ const body=document.getElementById('pendingRows');
+ if(!items.length){body.innerHTML='<tr><td colspan="6" class="muted">No pending putaway items found in the uploaded file.</td></tr>';return}
+ body.innerHTML=items.map(r=>{const receipt=getField(r,['receipt_no','grn_no','receipt_grn_no','document_no','document_number']);const code=getField(r,['item_code','sku','item']);const desc=getField(r,['item_description','description','item_name']);const qty=asNumber(getField(r,['quantity','qty','received_qty','stock_qty']));const date=getField(r,['received_date','receipt_date','date']);const status=getField(r,['putaway_status','status'])||'Location pending';return `<tr><td class="item">${escapeHTML(receipt||'—')}</td><td>${escapeHTML(code||'—')}</td><td>${escapeHTML(desc||'—')}</td><td>${qty.toLocaleString()}</td><td>${escapeHTML(date||'—')}</td><td><span class="status low">${escapeHTML(status)}</span></td></tr>`}).join('');
+}
+function normalizeRows(raw){
+ return raw.filter(r=>r&&Object.values(r).some(v=>String(v??'').trim()!=='')).map(r=>{const o={};Object.keys(r).forEach(k=>o[normKey(k)]=r[k]);return o});
+}
+function isPending(r){
+ const type=String(getField(r,['movement_type','transaction_type','type','activity'])).toLowerCase();
+ const status=String(getField(r,['putaway_status','status'])).toLowerCase();
+ const bin=String(getField(r,['bin_location','bin','location','putaway_bin'])).trim();
+ const receipt=Boolean(getField(r,['receipt_no','grn_no','document_no','document_number']));
+ const complete=status.includes('complete')||status.includes('putaway done');
+ if(complete||bin)return false;
+ return type.includes('pending')||status.includes('pending')||status.includes('not putaway')||status.includes('await')||(type.includes('putaway')&&!complete)||(receipt&&!type.includes('stock-out')&&!type.includes('dispatch'));
+}
+async function handleInventoryUpload(){
+ const file=uploadInput.files[0];
+ if(!file){uploadMessage.textContent='Please choose an Excel (.xlsx/.xls) or CSV file first.';return}
+ try{
+  let raw=[];
+  if(file.name.toLowerCase().endsWith('.csv')){
+   const text=await file.text();raw=parseCSV(text);
+  }else{
+   if(!window.XLSX){throw new Error('Excel reader could not load. Check your internet connection, then refresh and try again. CSV upload is also available.')}
+   const buf=await file.arrayBuffer();const wb=XLSX.read(buf,{type:'array',cellDates:true});const sheet=wb.Sheets[wb.SheetNames[0]];raw=XLSX.utils.sheet_to_json(sheet,{defval:''});
+  }
+  const rows=normalizeRows(raw);
+  if(!rows.length)throw new Error('The selected file has no data rows.');
+  const pending=rows.filter(isPending);
+  const inbound=rows.filter(r=>{const t=String(getField(r,['movement_type','transaction_type','type','activity'])).toLowerCase();return t.includes('stock-in')||t.includes('stock in')||t.includes('inbound')||t.includes('receipt')||t==='in'});
+  const outbound=rows.filter(r=>{const t=String(getField(r,['movement_type','transaction_type','type','activity'])).toLowerCase();return t.includes('stock-out')||t.includes('stock out')||t.includes('outbound')||t.includes('dispatch')||t==='out'});
+  const inQty=inbound.reduce((a,r)=>a+asNumber(getField(r,['quantity','qty','received_qty','stock_qty'])),0);
+  const outQty=outbound.reduce((a,r)=>a+asNumber(getField(r,['quantity','qty','dispatched_qty','stock_qty'])),0);
+  document.getElementById('stockInTotal').textContent='↑ '+inQty.toLocaleString();
+  document.getElementById('stockOutTotal').textContent='↓ '+outQty.toLocaleString();
+  document.getElementById('pendingCount').textContent=pending.length.toLocaleString();
+  document.getElementById('pendingBadge').textContent=pending.length.toLocaleString()+' pending · uploaded';
+  renderPending(pending);
+  uploadMessage.textContent=`Updated from ${file.name}: ${inbound.length} stock-in rows (${inQty.toLocaleString()} units), ${outbound.length} stock-out rows (${outQty.toLocaleString()} units), ${pending.length} pending putaway rows. Other dashboard figures were not changed.`;
+ }catch(e){uploadMessage.textContent='Upload failed: '+e.message}
+}
+function parseCSV(text){
+ const lines=[];let row=[],cell='',quoted=false;
+ for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'&&quoted&&n==='"'){cell+='"';i++}else if(c==='"'){quoted=!quoted}else if(c===','&&!quoted){row.push(cell);cell=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&n==='\n')i++;row.push(cell);lines.push(row);row=[];cell=''}else{cell+=c}}
+ row.push(cell);if(row.some(x=>x.trim()))lines.push(row);
+ if(lines.length<2)return [];
+ const headers=lines.shift().map(x=>x.trim());
+ return lines.filter(r=>r.some(x=>x.trim())).map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??''])));
+}
+function downloadTemplate(){
+ const csv='movement_type,quantity,item_code,item_description,receipt_no,received_date,bin_location,putaway_status\nStock-in,120,9103021,Master Carton for TS 68,INW-001,2026-11-27,,Location pending\nStock-out,35,9103010,Master Carton for GR 101 Top White,OUT-001,2026-11-27,SB4-02-02,Completed\nPending Putaway,80,9103031,TS 71 Master Carton,INW-002,2026-11-27,,Bin not assigned\n';
+ const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kosh-inventory-upload-template.csv';a.click();URL.revokeObjectURL(a.href);
+}
+
 </script>
 </body></html>
