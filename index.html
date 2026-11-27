@@ -72,6 +72,16 @@ main{flex:1;min-width:0;padding:28px 34px 40px;max-width:1600px;margin:auto;widt
       </div>
     </div>
   </section>
+
+  <section class="panel" id="item-lookup" style="margin-bottom:18px">
+    <div class="panel-head" style="margin-bottom:10px"><div><h3>Item code search – all details</h3><div class="sub">Search an item code to view stock, bin/location, reorder level, status and uploaded movement / putaway details.</div></div><span class="status good">Item lookup</span></div>
+    <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap">
+      <input class="search" id="itemCodeSearch" placeholder="Enter item code (e.g. 9103021)" aria-label="Search item code" style="width:min(360px,100%)">
+      <button class="btn primary" id="itemCodeSearchBtn" type="button">Search item</button>
+      <button class="btn" id="clearItemSearchBtn" type="button">Clear</button>
+    </div>
+    <div id="itemSearchResults" aria-live="polite" style="margin-top:12px"><div class="sub">Enter an item code to see all matching details.</div></div>
+  </section>
   <section class="panel table-panel" id="inventory">
     <div class="table-head"><div><h3>Recent inventory</h3><div class="sub">Sample item and bin-wise stock records</div></div><div class="tools"><input class="search" id="search" placeholder="Search item, code or bin…" aria-label="Search inventory"><select id="statusFilter" aria-label="Filter by stock status"><option value="all">All statuses</option><option value="Available">Available</option><option value="Low Stock">Low Stock</option><option value="Critical">Critical</option></select><button class="btn" onclick="downloadCSV()">Export CSV ↓</button></div></div>
     <div class="table-scroll"><table><thead><tr><th>Item code</th><th>Item description</th><th>Bin location</th><th>Stock qty</th><th>Reorder level</th><th>Status</th></tr></thead><tbody id="inventoryRows">
@@ -115,6 +125,34 @@ function downloadCSV(){const rows=[...document.querySelectorAll('table tr')].fil
 
 const uploadInput=document.getElementById('inventoryFile');
 const uploadMessage=document.getElementById('uploadMessage');
+
+let uploadedInventoryRows=[];
+const itemCodeInput=document.getElementById('itemCodeSearch');
+const itemSearchResults=document.getElementById('itemSearchResults');
+document.getElementById('itemCodeSearchBtn').addEventListener('click',searchItemCode);
+document.getElementById('clearItemSearchBtn').addEventListener('click',()=>{itemCodeInput.value='';itemSearchResults.innerHTML='<div class="sub">Enter an item code to see all matching details.</div>';});
+itemCodeInput.addEventListener('keydown',e=>{if(e.key==='Enter')searchItemCode();});
+function searchItemCode(){
+ const query=itemCodeInput.value.trim().toLowerCase();
+ if(!query){itemSearchResults.innerHTML='<div class="sub">Please enter an item code.</div>';return;}
+ const matches=[];
+ document.querySelectorAll('#inventoryRows tr').forEach(tr=>{
+  const cells=[...tr.querySelectorAll('td')];
+  if(cells.length && cells[0].innerText.trim().toLowerCase().includes(query)){
+   matches.push({source:'Current inventory',item_code:cells[0].innerText,item_description:cells[1]?.innerText,bin_location:cells[2]?.innerText,stock_qty:cells[3]?.innerText,reorder_level:cells[4]?.innerText,stock_status:cells[5]?.innerText});
+  }
+ });
+ uploadedInventoryRows.forEach(r=>{
+  const code=String(getField(r,['item_code','sku','item'])).trim();
+  if(code.toLowerCase().includes(query)){
+   matches.push({source:'Uploaded movement data',movement_type:getField(r,['movement_type','transaction_type','type','activity']),quantity:getField(r,['quantity','qty','received_qty','dispatched_qty','stock_qty']),item_code:code,item_description:getField(r,['item_description','description','item_name']),receipt_no:getField(r,['receipt_no','grn_no','receipt_grn_no','document_no','document_number']),date:getField(r,['received_date','receipt_date','date','transaction_date']),bin_location:getField(r,['bin_location','bin','location','putaway_bin']),putaway_status:getField(r,['putaway_status','status'])});
+  }
+ });
+ if(!matches.length){itemSearchResults.innerHTML='<div class="sub">No records found for item code <strong>'+escapeHTML(itemCodeInput.value.trim())+'</strong>. Check the code or upload a file containing this item.</div>';return;}
+ const fields=[['source','Record source'],['item_code','Item code'],['item_description','Description'],['bin_location','Bin / Location'],['stock_qty','Current stock qty'],['reorder_level','Reorder level'],['stock_status','Stock status'],['movement_type','Movement type'],['quantity','Movement / received qty'],['receipt_no','Receipt / GRN / document no.'],['date','Transaction / received date'],['putaway_status','Putaway status']];
+ itemSearchResults.innerHTML='<div class="sub" style="margin-bottom:8px"><strong>'+matches.length+'</strong> matching record(s) for item code <strong>'+escapeHTML(itemCodeInput.value.trim())+'</strong></div>'+matches.map((m,i)=>'<div style="border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:8px"><div style="font-weight:700;margin-bottom:8px">Record '+(i+1)+' · '+escapeHTML(m.source||'Item details')+'</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px">'+fields.filter(([k])=>m[k]!==undefined&&String(m[k]??'').trim()!=='').map(([k,label])=>'<div><div class="sub">'+label+'</div><div style="font-size:12px;font-weight:600;overflow-wrap:anywhere">'+escapeHTML(m[k])+'</div></div>').join('')+'</div></div>').join('');
+}
+
 document.getElementById('uploadBtn').addEventListener('click',handleInventoryUpload);
 
 function normKey(v){return String(v??'').trim().toLowerCase().replace(/[\s\-\/]+/g,'_').replace(/[^a-z0-9_]/g,'').replace(/_+/g,'_').replace(/^_|_$/g,'')}
@@ -151,6 +189,7 @@ async function handleInventoryUpload(){
   }
   const rows=normalizeRows(raw);
   if(!rows.length)throw new Error('The selected file has no data rows.');
+  uploadedInventoryRows=rows;
   const pending=rows.filter(isPending);
   const inbound=rows.filter(r=>{const t=String(getField(r,['movement_type','transaction_type','type','activity'])).toLowerCase();return t.includes('stock-in')||t.includes('stock in')||t.includes('inbound')||t.includes('receipt')||t==='in'});
   const outbound=rows.filter(r=>{const t=String(getField(r,['movement_type','transaction_type','type','activity'])).toLowerCase();return t.includes('stock-out')||t.includes('stock out')||t.includes('outbound')||t.includes('dispatch')||t==='out'});
